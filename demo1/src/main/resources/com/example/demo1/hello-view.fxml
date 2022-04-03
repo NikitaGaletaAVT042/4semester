@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Habitat">
+    <children>
+      <MenuBar prefHeight="0.0" prefWidth="624.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Симуляция">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#start" text="Старт" />
+              <MenuItem mnemonicParsing="false" onAction="#end" text="Стоп" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Информация">
+               <items>
+                  <CheckMenuItem fx:id="INFO" mnemonicParsing="false" onAction="#ButtonInformation" text="Показать" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+        <AnchorPane fx:id="anchorPane" layoutX="-1.0" layoutY="3.0" prefHeight="416.0" prefWidth="362.0">
+            <children>
+                <ImageView fitHeight="511.0" fitWidth="453.0" layoutX="-1.0" layoutY="26.0" opacity="0.5" pickOnBounds="true">
+                    <image>
+                        <Image url="@photo/Background.png" />
+                    </image></ImageView>
+            <CheckBox fx:id="radioInformation" layoutX="451.0" layoutY="512.0" mnemonicParsing="false" onAction="#ButtonInformation" text="Показать информацию" />
+                <Button fx:id="StartButton" layoutX="451.0" layoutY="70.0" mnemonicParsing="false" onAction="#start" text="Старт" />
+                <Button fx:id="EndButton" layoutX="560.0" layoutY="69.0" mnemonicParsing="false" onAction="#end" prefHeight="26.0" prefWidth="52.0" text="Cтоп" />
+              <Label fx:id="labelTime" layoutX="455.0" layoutY="104.0" prefHeight="54.0" prefWidth="166.0" text="Текущее время " textFill="#413999">
+                  <font>
+                      <Font name="Times New Roman Italic" size="18.0" />
+                  </font>
+              </Label>
+              <Label fx:id="labelSimulation" layoutX="451.0" layoutY="29.0" prefHeight="54.0" prefWidth="174.0" text="Симуляция неактивна" textFill="#9b00ff" />
+            <RadioButton fx:id="radioTimeopen" layoutX="455.0" layoutY="158.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="116.0" text="показать время " />
+            <RadioButton fx:id="radioTimeclose" layoutX="457.0" layoutY="182.0" mnemonicParsing="false" text="спрятать время" />
+              <Label layoutX="461.0" layoutY="213.0" prefHeight="18.0" prefWidth="98.0" text="Немного музыки" />
+              <ProgressBar fx:id="songProgressBar" layoutX="459.0" layoutY="236.0" prefHeight="18.0" prefWidth="166.0" progress="0.0" style="-fx-background-color: black;" />
+              <Button fx:id="playButton" layoutX="461.0" layoutY="268.0" mnemonicParsing="false" text="Play" />
+              <Slider fx:id="volumeSlider" layoutX="503.0" layoutY="272.0" max="200.0" prefHeight="14.0" prefWidth="56.0" value="100.0" />
+              <Button fx:id="pauseButton" layoutX="565.0" layoutY="267.0" mnemonicParsing="false" text="Pause" />
+            <TextField fx:id="intervalManager" layoutX="464.0" layoutY="301.0">
+               <tooltip>
+                  <Tooltip text="Время создания менеджеров" />
+               </tooltip></TextField>
+            <TextField fx:id="intervalProgrammist" layoutX="464.0" layoutY="370.0">
+               <tooltip>
+                  <Tooltip text="Время создания программистов" />
+               </tooltip></TextField>
+            <Button layoutX="454.0" layoutY="444.0" mnemonicParsing="false" onAction="#button" prefHeight="26.0" prefWidth="166.0" text="Обновить данные" />
+            <ComboBox fx:id="persentManager" layoutX="463.0" layoutY="336.0" prefWidth="150.0">
+               <tooltip>
+                  <Tooltip text="Процент создания менеджеров" />
+               </tooltip></ComboBox>
+            <ComboBox fx:id="persentProgrammist" layoutX="463.0" layoutY="408.0" prefWidth="150.0">
+               <tooltip>
+                  <Tooltip text="Процент создания программистов" />
+               </tooltip></ComboBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
